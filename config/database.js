@@ -1,4 +1,5 @@
-const config = parse(process.env.DATABASE_URL);
+const {ConnectionString} = require('connection-string');
+const config = new ConnectionString(process.env.DATABASE_URL);
 
 module.exports = ({ env }) => ({
   connection: {

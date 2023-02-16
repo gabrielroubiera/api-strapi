@@ -13,6 +13,7 @@
     "@strapi/plugin-i18n": "4.6.1",
     "@strapi/plugin-users-permissions": "4.6.1",
     "@strapi/strapi": "4.6.1",
+    "connection-string": "^4.3.6",
     "mysql": "2.18.1",
     "strapi-stripe": "^3.2.1",
     "stripe": "^11.10.0"
