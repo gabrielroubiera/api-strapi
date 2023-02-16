@@ -1,15 +1,12 @@
-const {ConnectionString} = require('connection-string');
-const config = new ConnectionString(process.env.DATABASE_URL);
-
 module.exports = ({ env }) => ({
   connection: {
     client: 'mysql',
     connection: {
-      host: env('DATABASE_HOST', config.host),
+      host: env('DATABASE_HOST', process.env.HOST),
       port: env.int('DATABASE_PORT', 3306),
-      database: env('DATABASE_NAME', config.database),
-      user: env('DATABASE_USERNAME', config.user),
-      password: env('DATABASE_PASSWORD', config.password),
+      database: env('DATABASE_NAME', process.env.DB_NAME),
+      user: env('DATABASE_USERNAME', process.env.DB_USER),
+      password: env('DATABASE_PASSWORD', process.env.DB_PASS),
       ssl: env.bool('DATABASE_SSL', false),
     },
   },
